@@ -1365,6 +1365,12 @@ FROM root c
 WHERE ((c[""Discriminator""] = ""Customer"") AND STRINGEQUALS(c[""CustomerID""], ""alFkI"", true))");
         }
 
+        [ConditionalTheory(Skip = "Issue #17246")]
+        public override Task Datetime_subtraction_TotalDays(bool async)
+        {
+            return base.Datetime_subtraction_TotalDays(async);
+        }
+
         private void AssertSql(params string[] expected)
             => Fixture.TestSqlLoggerFactory.AssertBaseline(expected);
 
