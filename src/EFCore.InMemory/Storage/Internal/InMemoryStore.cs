@@ -180,7 +180,7 @@ namespace Microsoft.EntityFrameworkCore.InMemory.Storage.Internal
                             continue;
                         }
 
-                        table.Delete(entry);
+                        table.Delete(entry.SharedIdentityEntry);
                     }
 
                     switch (entry.EntityState)
